@@ -1,0 +1,595 @@
+/* Reset y estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #004d98 0%, #a50044 100%);
+    color: #fff;
+    min-height: 100vh;
+}
+
+/* ==================== ESTILOS DEL LOGIN ==================== */
+
+.login-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.login-box {
+    background: rgba(255, 255, 255, 0.98);
+    border-radius: 20px;
+    padding: 50px 40px;
+    max-width: 450px;
+    width: 100%;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.4);
+    text-align: center;
+    animation: slideIn 0.6s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.login-logo {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 20px;
+    background: linear-gradient(135deg, #004d98, #a50044);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3em;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.login-box h2 {
+    color: #004d98;
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.login-subtitle {
+    color: #a50044;
+    font-size: 1.1em;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+.login-info {
+    background: rgba(0, 77, 152, 0.1);
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    color: #004d98;
+    font-size: 0.95em;
+    border-left: 4px solid #a50044;
+}
+
+.form-group {
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    color: #004d98;
+    font-weight: bold;
+    margin-bottom: 8px;
+    font-size: 1em;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #004d98;
+    border-radius: 10px;
+    font-size: 16px;
+    transition: all 0.3s;
+    background: white;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #a50044;
+    box-shadow: 0 0 10px rgba(165, 0, 68, 0.3);
+}
+
+.login-btn {
+    width: 100%;
+    background: linear-gradient(135deg, #004d98, #a50044);
+    color: white;
+    border: none;
+    padding: 18px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.login-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.error-message {
+    background: #ffebee;
+    color: #c62828;
+    padding: 12px;
+    border-radius: 8px;
+    margin-top: 15px;
+    border-left: 4px solid #c62828;
+    display: none;
+    animation: shake 0.5s;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    75% { transform: translateX(10px); }
+}
+
+.login-footer {
+    margin-top: 25px;
+    color: #666;
+    font-size: 0.9em;
+}
+
+/* ==================== ESTILOS PÁGINA PRINCIPAL ==================== */
+
+.main-content {
+    display: block;
+}
+
+header {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    position: relative;
+}
+
+.logout-btn {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    background: #a50044;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.logout-btn:hover {
+    background: #ffd700;
+    color: #004d98;
+}
+
+h1 {
+    color: #ffd700;
+    font-size: 2.5em;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+nav {
+    margin-top: 15px;
+}
+
+nav button {
+    background: #a50044;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    margin: 0 10px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+
+nav button:hover {
+    background: #ffd700;
+    color: #004d98;
+    transform: translateY(-2px);
+}
+
+nav button.active {
+    background: #ffd700;
+    color: #004d98;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 20px;
+}
+
+.section {
+    display: none;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    padding: 30px;
+    color: #333;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+}
+
+.section.active {
+    display: block;
+    animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+h2 {
+    color: #004d98;
+    margin-bottom: 20px;
+    font-size: 2em;
+    border-bottom: 3px solid #a50044;
+    padding-bottom: 10px;
+}
+
+/* ==================== ESTADIO ==================== */
+
+.stadium-container {
+    position: relative;
+    max-width: 900px;
+    margin: 30px auto;
+    background: #000;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+}
+
+.stadium-image {
+    width: 100%;
+    height: 500px;
+    background-image: url("camp-nou.png");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.stadium-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: grid;
+    grid-template-columns: 15% 70% 15%;
+    grid-template-rows: 15% 70% 15%;
+    gap: 0;
+}
+
+.stand-zone {
+    background: rgba(0, 77, 152, 0.75);
+    border: 2px solid rgba(255, 215, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+    backdrop-filter: blur(5px);
+}
+
+.stand-zone:hover {
+    background: rgba(255, 215, 0, 0.9);
+    color: #004d98;
+    transform: scale(1.05);
+    z-index: 10;
+}
+
+.stand-zone.selected {
+    background: rgba(165, 0, 68, 0.9);
+    border-color: #ffd700;
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.9);
+    border-width: 3px;
+}
+
+.stand-north { 
+    grid-column: 2; 
+    grid-row: 1; 
+}
+
+.stand-south { 
+    grid-column: 2; 
+    grid-row: 3; 
+}
+
+.stand-east { 
+    grid-column: 3; 
+    grid-row: 2; 
+    writing-mode: vertical-rl;
+}
+
+.stand-west { 
+    grid-column: 1; 
+    grid-row: 2; 
+    writing-mode: vertical-rl;
+}
+
+.field-center {
+    grid-column: 2;
+    grid-row: 2;
+    pointer-events: none;
+}
+
+.ticket-info {
+    background: #f9f9f9;
+    border: 2px solid #004d98;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.ticket-info h3 {
+    color: #a50044;
+    margin-bottom: 15px;
+}
+
+.price {
+    font-size: 2em;
+    color: #004d98;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.stadium-info {
+    text-align: center;
+    margin: 20px 0;
+    padding: 15px;
+    background: rgba(0, 77, 152, 0.1);
+    border-radius: 10px;
+}
+
+.stadium-info p {
+    color: #666;
+    margin: 5px 0;
+}
+
+/* ==================== TIENDA ==================== */
+
+.shirts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.shirt-card {
+    background: white;
+    border: 3px solid #004d98;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    transition: all 0.3s;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+}
+
+.shirt-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+.shirt-image {
+    width: 100%;
+    height: 350px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    background-color: #f5f5f5;
+}
+
+.shirt-local {
+    background-image: url("camisola-local.jpg");
+}
+
+.shirt-visitante {
+    background-image: url("visitante.jpg");
+}
+
+.shirt-tercera {
+    background-image: url("camisola-tercera.jpg");
+}
+
+.shirt-card h3 {
+    color: #004d98;
+    margin: 15px 0;
+    font-size: 1.5em;
+}
+
+.shirt-description {
+    color: #666;
+    font-size: 0.95em;
+    margin: 10px 0;
+    min-height: 40px;
+}
+
+.shirt-price {
+    font-size: 1.8em;
+    color: #a50044;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.size-selector {
+    margin: 15px 0;
+}
+
+.size-selector button, .size-btn {
+    background: #f0f0f0;
+    border: 2px solid #004d98;
+    padding: 8px 15px;
+    margin: 0 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+
+.size-selector button:hover,
+.size-selector button.selected,
+.size-btn:hover,
+.size-btn.selected {
+    background: #004d98;
+    color: white;
+}
+
+.btn {
+    background: #a50044;
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: 15px;
+}
+
+.btn:hover {
+    background: #ffd700;
+    color: #004d98;
+    transform: scale(1.05);
+}
+
+/* ==================== CARRITO ==================== */
+
+.cart-summary {
+    background: #004d98;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.cart-summary h3 {
+    margin-bottom: 15px;
+}
+
+.cart-items {
+    background: rgba(255,255,255,0.1);
+    padding: 15px;
+    border-radius: 5px;
+    margin: 10px 0;
+    text-align: left;
+}
+
+.cart-item {
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.cart-total {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-top: 15px;
+    color: #ffd700;
+}
+
+/* ==================== RESPONSIVE ==================== */
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.8em;
+    }
+    
+    nav button {
+        padding: 10px 15px;
+        font-size: 14px;
+        margin: 5px;
+    }
+    
+    .stadium-image {
+        height: 400px;
+    }
+    
+    .shirts-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .logout-btn {
+        position: static;
+        margin-bottom: 15px;
+    }
+    /* ---------- personalización camiseta ---------- */
+/* ===== personalización camiseta (estético) ===== */
+.player-custom {
+    margin: 18px 0 22px 0;
+    text-align: center;
+    font-size: 14px;
+}
+.player-custom label {
+    display: block;
+    color: #004d98;
+    font-weight: 700;
+    margin-bottom: 8px;
+    font-size: 15px;
+}
+.player-line {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+.player-list,
+.dorsal-input {
+    padding: 9px 12px;
+    border: 2px solid #004d98;
+    border-radius: 8px;
+    font-size: 15px;
+    background: #fff;
+    transition: all .25s;
+}
+.player-list {
+    flex: 1 1 70%;
+    max-width: 260px;
+}
+.dorsal-input {
+    flex: 0 0 70px;
+    text-align: center;
+}
+.player-list:focus,
+.dorsal-input:focus {
+    border-color: #a50044;
+    box-shadow: 0 0 8px rgba(165, 0, 68, .35);
+    outline: none;
+}
+/* pequeña animación al aparecer */
+.player-custom {
+    animation: fadeIn .5s ease-out;
+}
+.dorsal-input:disabled {
+    background: #f5f5f5;
+    border-color: #aaa;
+    color: #777;
+}
+}

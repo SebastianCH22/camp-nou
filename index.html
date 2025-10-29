@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FC Barcelona - Login</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Pantalla de Login -->
+    <div class="login-container" id="loginScreen">
+        <div class="login-box">
+            <div class="login-logo">⚽</div>
+            <h2>FC Barcelona</h2>
+            <p class="login-subtitle">Més que un club</p>
+            
+            <div class="login-info">
+                🔐 Acceso exclusivo para socios culés
+            </div>
+
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="username">👤 Usuario Culé</label>
+                    <input 
+                        type="text" 
+                        id="username" 
+                        placeholder="Ingresa tu usuario" 
+                        required
+                        autocomplete="off"
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="password">🔒 Contraseña</label>
+                    <input 
+                        type="password" 
+                        id="password" 
+                        placeholder="Ingresa tu contraseña" 
+                        required
+                    >
+                </div>
+
+                <button type="submit" class="login-btn">
+                    Ingresar al Camp Nou
+                </button>
+
+                <div class="error-message" id="errorMessage">
+                    ❌ Usuario o contraseña incorrectos. ¡Visca el Barça!
+                </div>
+            </form>
+
+            <div class="login-footer">
+                <p>🏆 Bienvenido a la experiencia oficial del FC Barcelona</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

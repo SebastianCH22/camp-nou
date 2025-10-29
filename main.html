@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FC Barcelona - Entradas y Tienda</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="main-content">
+        <header>
+            <button class="logout-btn" id="logoutBtn">🚪 Cerrar Sesión</button>
+            <h1>⚽ FC BARCELONA</h1>
+            <p style="margin-top: 10px; font-size: 1.2em;">Spotify Camp Nou - Temporada 2024/25</p>
+            <nav>
+                <button class="nav-btn active" data-section="tickets">Entradas</button>
+                <button class="nav-btn" data-section="shop">Tienda Oficial</button>
+                <button class="nav-btn" data-section="cart">🛒 Carrito (<span id="cart-count">0</span>)</button>
+            </nav>
+        </header>
+
+        <div class="container">
+            <!-- Sección de Entradas -->
+            <div id="tickets" class="section active">
+                <h2>Selecciona tu Localidad en el Spotify Camp Nou</h2>
+                
+                <div class="stadium-info">
+                    <p><strong>📍 Estadio más grande de Europa</strong> - Capacidad: 99,354 espectadores</p>
+                    <p>Haz clic en las zonas del estadio para seleccionar tu entrada</p>
+                </div>
+                
+                <div class="stadium-container">
+                    <div class="stadium-image">
+                        <div class="stadium-overlay">
+                            <div class="stand-zone stand-north" data-stand="norte" data-price="650">
+                                <span>Tribuna Norte<br>Q650</span>
+                            </div>
+                            <div class="stand-zone stand-south" data-stand="sur" data-price="700">
+                                <span>Tribuna Sur<br>Q700</span>
+                            </div>
+                            <div class="stand-zone stand-east" data-stand="este" data-price="500">
+                                <span>Lateral Este (Preferente) - Q500</span>
+                            </div>
+                            <div class="stand-zone stand-west" data-stand="oeste" data-price="600">
+                                <span>Lateral Oeste (Preferente) - Q600</span>
+                            </div>
+                            <div class="field-center"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ticket-info" id="ticket-info" style="display: none;">
+                    <h3>🎫 Entrada Seleccionada</h3>
+                    <p><strong>Localidad:</strong> <span id="selected-stand"></span></p>
+                    <p class="price">Q<span id="selected-price"></span></p>
+                    <label for="ticket-quantity">Cantidad:</label>
+                    <input type="number" id="ticket-quantity" min="1" max="10" value="1" style="width: 60px; padding: 5px; margin: 10px; font-size: 16px;">
+                    <br>
+                    <button class="btn" id="addTicketBtn">Añadir al Carrito</button>
+                </div>
+            </div>
+
+            <!-- Sección de Tienda -->
+            <div id="shop" class="section">
+                <h2>Tienda Oficial - Camisetas Temporada 2024/25</h2>
+                
+                <div class="shirts-grid">
+                    <!-- Camiseta Local -->
+                    <div class="shirt-card">
+                        <div class="shirt-image shirt-local"></div>
+                        <h3>Camiseta Local 2024/25</h3>
+                        <p class="shirt-description">Primera equipación oficial con las icónicas franjas azulgrana y patrocinio Nike + Spotify</p>
+                        <p class="shirt-price">Q899.99</p>
+                        <div class="size-selector" data-shirt="local">
+                            <button class="size-btn">S</button>
+                            <button class="size-btn">M</button>
+                            <button class="size-btn">L</button>
+                            <button class="size-btn">XL</button>
+                            <button class="size-btn">XXL</button>
+                        </div>
+                        <button class="btn add-shirt-btn" data-name="Local" data-price="899.99" data-type="local">Añadir al Carrito</button>
+                        <!-- ... precio y selector de talla ya existentes ... -->
+
+
+                    </div>
+
+                    <!-- Camiseta Visitante -->
+                    <div class="shirt-card">
+                        <div class="shirt-image shirt-visitante"></div>
+                        <h3>Camiseta Visitante 2024/25</h3>
+                        <p class="shirt-description">Segunda equipación en negro con franjas azulgrana - Diseño futurista exclusivo Nike</p>
+                        <p class="shirt-price">Q899.99</p>
+                        <div class="size-selector" data-shirt="visitante">
+                            <button class="size-btn">S</button>
+                            <button class="size-btn">M</button>
+                            <button class="size-btn">L</button>
+                            <button class="size-btn">XL</button>
+                            <button class="size-btn">XXL</button>
+                        </div>
+                        <button class="btn add-shirt-btn" data-name="Visitante" data-price="899.99" data-type="visitante">Añadir al Carrito</button>
+                    </div>
+
+                    <!-- Tercera Equipación -->
+                    <div class="shirt-card">
+                        <div class="shirt-image shirt-tercera"></div>
+                        <h3>Tercera Equipación 2024/25</h3>
+                        <p class="shirt-description">Tercera camiseta en color Barely Volt - Edición especial moderna y vibrante</p>
+                        <p class="shirt-price">Q899.99</p>
+                        <div class="size-selector" data-shirt="tercera">
+                            <button class="size-btn">S</button>
+                            <button class="size-btn">M</button>
+                            <button class="size-btn">L</button>
+                            <button class="size-btn">XL</button>
+                            <button class="size-btn">XXL</button>
+                        </div>
+                        <button class="btn add-shirt-btn" data-name="Tercera Equipación" data-price="899.99" data-type="tercera">Añadir al Carrito</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sección de Carrito -->
+            <div id="cart" class="section">
+                <h2>🛒 Tu Carrito de Compras</h2>
+                <div class="cart-summary">
+                    <h3>Resumen del Pedido</h3>
+                    <div class="cart-items" id="cart-items">
+                        <p style="text-align: center; color: rgba(255,255,255,0.7);">Tu carrito está vacío</p>
+                    </div>
+                    <div class="cart-total">
+                        Total: Q<span id="cart-total">0.00</span>
+                    </div>
+                    <button class="btn" id="checkoutBtn" style="background: #ffd700; color: #004d98; margin-top: 20px;">
+                        Proceder al Pago
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
